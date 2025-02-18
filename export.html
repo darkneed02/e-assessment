@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>ดาวน์โหลด</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="img/L21-65.png" rel="icon">
+    <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- My CSS-->
+    <link href="css/img-style.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <form action="php/export.php" method="post">
+      <div class="container">
+        <img src="img/L21-65.png" alt="" class="center-image">
+        <h4 style="text-align: center;">ดาวน์โหลด แบบสอบถามความพึงพอใจ ความไม่พึงพอใจ และความผูกพันต่อการให้บริการของ กยท.</h4>
+        <div class="row mb-3">
+          <div class="col-sm-3"></div>
+          <label for="inputText" class="col-sm-1 col-form-label"><h5 style="text-align: right;">เดือน</h5></label>
+          <div class="col-sm-2">
+            <select id="txtMonth" name="txtMonth" class="form-select border-danger" required>
+              <option value="" selected></option>
+              <option value="มกราคม">มกราคม</option>
+              <option value="กุมภาพันธ์">กุมภาพันธ์</option>
+              <option value="มีนาคม">มีนาคม</option>
+              <option value="เมษายน">เมษายน</option>
+              <option value="พฤษภาคม">พฤษภาคม</option>
+              <option value="มิถุนายน">มิถุนายน</option>
+              <option value="กรกฎาคม">กรกฎาคม</option>
+              <option value="สิงหาคม">สิงหาคม</option>
+              <option value="กันยายน">กันยายน</option>
+              <option value="ตุลาคม">ตุลาคม</option>
+              <option value="พฤษจิกายน">พฤษจิกายน</option>
+              <option value="ธันวาคม">ธันวาคม</option>
+            </select>
+          </div>
+          <label for="inputText" class="col-sm-1 col-form-label"><h5 style="text-align: right;">พ.ศ.</h5></label>
+          <div class="col-sm-2">
+            <select id="txtYear" name="txtYear" class="form-select border-danger" required>
+              <option value="2567" selected>2567</option>
+              <option value="2568">2568</option>
+            </select>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-12" style="text-align: center;">
+            <button type="submit" class="btn btn-primary">Excel</button>
+          </div>
+        </div>  
+      </div>
+    </form>
+    </main>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
