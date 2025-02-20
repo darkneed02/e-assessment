@@ -2,7 +2,7 @@
 require_once 'class/db_connect.php';
 $conn = db_connect();
 
-$query = 'select department,uid_asses,"createDte" from  public.tb_assessment';
+$query = 'select department,subservice,uid_asses,"createDte" from  public.tb_assessment';
 $result = pg_query($conn, $query);
 
 if (!$result) {
@@ -72,10 +72,11 @@ pg_close($conn);
             <table id="assessmentTable" class="table table-bordered table-striped ">
               <thead class="text-center">
                 <tr>
-                  <th>#</th>
-                  <th>ด้าน</th>
-                  <th>วันที่</th>
-                  <th>รายละเอียด</th>
+                  <th width="5%" class="text-center">#</th>
+                  <th class="text-center">ด้าน</th>
+                  <th class="text-center">บริการย่อย</th>
+                  <th class="text-center">วันที่</th>
+                  <th width="20%" class="text-center">รายละเอียด</th>
                 </tr>
               </thead>
               <tbody>
@@ -84,17 +85,19 @@ pg_close($conn);
                 while ($row = pg_fetch_assoc($result)) {
 
                   $date = new DateTime($row['createDte']);
+                  $department = $row['department'] == 'Serviceside' ? 'บริการ' : ($row['department'] == 'Productside' ? 'ผลิตภัณฑ์' : $row['department']);
+
 
                   echo "<tr>";
                   echo "<td class='text-center'>{$index}</td>";
-                  echo "<td>{$row['department']}</td>";
-                  echo "<td>" . $date->format('d-m-y') . "</td>";
+                  echo "<td>$department</td>";
+                  echo "<td>{$row['subservice']}</td>";
+                  echo "<td>" . $date->format('d-m-') . ($date->format('Y') + 543) . " " . $date->format('H:i') . "</td>";
                   echo "<td>";
                   // ปุ่มรายละเอียด
                   echo "<a href='details-assessments.php?id={$row['uid_asses']}' class='btn btn-outline-success btn-sm'>";
                   echo "📄 รายละเอียด";
                   echo "</a> ";
-
                   // ปุ่มดาวน์โหลดไฟล์
                   echo "<a href='download.php?id={$row['uid_asses']}' class='btn btn-outline-primary btn-sm'>";
                   echo "⬇️ นำข้อมูลออก";

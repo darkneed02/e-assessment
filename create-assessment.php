@@ -82,7 +82,7 @@
                             <div class="col-sm" id="subServiceContainer" style="display: none;">
                                 <label for="txtSubService" class="col col-form-label">บริการย่อย</label>
                                 <select id="txtSubService" name="txtSubService" class="form-select">
-                                    <option value="กรุณาเลือก" selected>กรุณาเลือก</option>
+                                    <option value="" selected disabled>กรุณาเลือก</option>
                                     <option value="JoinProject">เข้าร่วมโครงการ</option>
                                     <option value="Funding">การขอทุน</option>
                                     <option value="TestCenter">ศูนย์ทดสอบ</option>
@@ -780,33 +780,10 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#txtSide").change(function() {
-                if ($(this).val() === "Serviceside") {
-                    $("#subServiceContainer").show(); // แสดง dropdown บริการย่อย
-                } else {
-                    $("#subServiceContainer").hide(); // ซ่อน dropdown บริการย่อย
-                    $("#txtSubService").val("กรุณาเลือก"); // รีเซ็ตค่า
-                }
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const checkboxes = document.querySelectorAll("input[name='ckbDissatisfaction']");
-
-            checkboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function() {
-                    if (this.checked) {
-                        checkboxes.forEach((cb) => {
-                            if (cb !== this) cb.checked = false;
-                        });
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="assets/js/checkbox.js"></script>
+    <script src="assets/js/dropdown.js"></script>
+    <script src="assets/js/textareabox.js"></script>
+    
 </body>
 
 </html>

@@ -686,7 +686,7 @@ pg_close($conn);
                                             <div class="col-sm-1"></div>
                                             <div class="col-sm-10">
                                                 <label class="form-check-label mb-1" for="rdoJob6"><b>2. ด้านขั้นตอนการให้บริการ</b> โปรดระบุ พร้อมข้อเสนอแนะเพื่อการปรับปรุง</label>
-                                                <textarea class="form-control mb-1" name="txtCustomerProcessingService" id="txtCustomerProcessingService" placeholder="อื่นๆ โปรดระบุ" ><?php echo $row['a_5_2']; ?>"</textarea>
+                                                <textarea class="form-control mb-1" name="txtCustomerProcessingService" id="txtCustomerProcessingService" placeholder="อื่นๆ โปรดระบุ" ><?php echo $row['a_5_2']; ?></textarea>
                                             </div>
                                             <div class="col-sm-1"></div>
                                             <div class="col-sm-1"></div>
